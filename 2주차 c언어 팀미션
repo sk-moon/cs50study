@@ -1,0 +1,36 @@
+// 문제1 재고관리 프로그램
+
+# include <stdio.h>
+# include <cs50.h>
+
+
+int main(void)
+{
+    
+    int order_number = get_int("주문건수를 입력하세요: ");
+    int stock_number = get_int("기존 재고량을 입력하세요: ");
+    int new_number = stock_number - order_number;
+    int price = get_int("제품 가격을 입력하세요: ") * order_number * 1.1;
+
+    printf("주문건수 : %i 개\n",order_number);
+    printf("기존 재고량 : %i 개\n",stock_number);
+    printf("남은 재고량 : %i 개\n",new_number);
+    printf("매출액(부가세포함) : %i 원\n", price);
+}
+
+
+
+// 문제2 원금 + 이자 합계출력해주는 코드 작성 
+
+# include <stdio.h>
+# include <cs50.h>
+
+int main(void)
+{
+    // principal : 원금, interest : 이자
+    int principal = get_int("목표금액을 입력하세요: \n") * 12;
+    int interest = principal * 0.012;
+    int total = principal + interest;
+    // 만기시 금액 
+    printf("만기시 받게 되는 금액은 %i 입니다. \n", total);
+}
